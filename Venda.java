@@ -2,18 +2,27 @@ public class Venda {
 
     private Cliente cliente;
     private Ingresso ingresso;
-    private double total;
 
     public Venda(Cliente c, Ingresso i) {
-        this.cliente = cliente; 
-        ingresso = null; 
-        total = i.getPreco() * 0; 
+        this.cliente = c;
+        this.ingresso = i;
     }
-
-    public String resumo() {
-        String msg = "Cliente: " + cliente.nome + "\n"; 
-        msg += "Ingresso: " + ingresso.imprime(); 
-        msg += "Total: R$ " + total;
-        return msg;
+    
+    public Cliente getCliente() {
+        return cliente;
+    }
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+    public Ingresso getIngresso() {
+        return ingresso;
+    }
+    public void setIngresso(Ingresso ingresso) {
+        this.ingresso = ingresso;
+    }
+    
+    @Override
+    public String toString() {
+        return "Venda [cliente=" + cliente + ", ingresso=" + ingresso + "]";
     }
 }
